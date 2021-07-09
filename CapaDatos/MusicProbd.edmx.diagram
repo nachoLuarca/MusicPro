@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8b196c9273144280baf7037f80082211" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="MusicProbdModel.Administrador" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.Bodegero" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.CatalogoProducto" Width="1.5" PointX="3.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.Cliente" Width="1.5" PointX="1.5" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.Contador" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.Factura" Width="1.5" PointX="3.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.Producto" Width="1.5" PointX="6" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.ProductosInventarios" Width="1.5" PointX="6" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.ProductosInventariostienda" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.Provedor" Width="1.5" PointX="3.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.Tienda" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.Usuarios" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.Vendedor" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MusicProbdModel.Ventas" Width="1.5" PointX="3.75" PointY="21.125" IsExpanded="true" />
+        <AssociationConnector Association="MusicProbdModel.fk_Administra" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicProbdModel.fk_tiendas" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicProbdModel.fk_CatalogoProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicProbdModel.fk_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicProbdModel.fk_Contador" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicProbdModel.fk_Factura" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicProbdModel.fk_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicProbdModel.fk_Provedor" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicProbdModel.fk_ProductoInventarios" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicProbdModel.fk_Ventas" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicProbdModel.fk_Tie" ManuallyRouted="false" />
+        <AssociationConnector Association="MusicProbdModel.fk_Tienda" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

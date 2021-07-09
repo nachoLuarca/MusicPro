@@ -1,0 +1,17 @@
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\CapaNegocio.dll.config
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\EntityFramework.dll
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\System.Data.SqlClient.dll
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\CapaDatos.dll.config
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\EntityFramework.xml
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\bin\Debug\System.Data.SqlClient.xml
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\obj\Debug\CapaNegocio.csprojAssemblyReference.cache
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\aleja\source\repos\MusicPro\CapaNegocio\obj\Debug\CapaNegocio.pdb

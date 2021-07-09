@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MusicProbdModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rut" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contacto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bodegero">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idtiendas" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contacto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogoProducto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreCategoria" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="tipoCategoria" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="especificacion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="detalles" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rut" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contacto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contador">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rut" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contacto" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Monto" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MedioPago" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idProveedor" Type="int" Nullable="false" />
+    <Property Name="idCatalogoProducto" Type="int" Nullable="false" />
+    <Property Name="codigoBarra" Type="int" Nullable="false" />
+    <Property Name="precio" Type="int" Nullable="false" />
+    <Property Name="stock" Type="int" Nullable="false" />
+    <Property Name="stockCritico" Type="int" Nullable="false" />
+    <Property Name="marca" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductosInventarios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idFactura" Type="int" Nullable="false" />
+    <Property Name="idVentas" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductosInventariostienda">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idproductoInventarios" Type="int" Nullable="false" />
+    <Property Name="idproducto" Type="int" Nullable="false" />
+    <Property Name="idtienda" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Provedor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contacto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombreEmpresa" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tienda">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idContador" Type="int" Nullable="false" />
+    <Property Name="idAministrador" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contacto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="tiendcol" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id_usuario" />
+    </Key>
+    <Property Name="Id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Contraseña" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Tipo_usuario" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vendedor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTienda" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contacto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ventas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCliente" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_Administra">
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="1" />
+    <End Role="Tienda" Type="Self.Tienda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tienda">
+        <PropertyRef Name="idAministrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CatalogoProducto">
+    <End Role="CatalogoProducto" Type="Self.CatalogoProducto" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogoProducto">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idCatalogoProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Ventas">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Contador">
+    <End Role="Contador" Type="Self.Contador" Multiplicity="1" />
+    <End Role="Tienda" Type="Self.Tienda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tienda">
+        <PropertyRef Name="idContador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Factura">
+    <End Role="Factura" Type="Self.Factura" Multiplicity="1" />
+    <End Role="ProductosInventarios" Type="Self.ProductosInventarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductosInventarios">
+        <PropertyRef Name="idFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="ProductosInventariostienda" Type="Self.ProductosInventariostienda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductosInventariostienda">
+        <PropertyRef Name="idproducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProductoInventarios">
+    <End Role="ProductosInventarios" Type="Self.ProductosInventarios" Multiplicity="1" />
+    <End Role="ProductosInventariostienda" Type="Self.ProductosInventariostienda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductosInventarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductosInventariostienda">
+        <PropertyRef Name="idproductoInventarios" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Provedor">
+    <End Role="Provedor" Type="Self.Provedor" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provedor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tie">
+    <End Role="Tienda" Type="Self.Tienda" Multiplicity="1" />
+    <End Role="ProductosInventariostienda" Type="Self.ProductosInventariostienda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tienda">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductosInventariostienda">
+        <PropertyRef Name="idtienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tienda">
+    <End Role="Tienda" Type="Self.Tienda" Multiplicity="1" />
+    <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tienda">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vendedor">
+        <PropertyRef Name="idTienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tiendas">
+    <End Role="Tienda" Type="Self.Tienda" Multiplicity="1" />
+    <End Role="Bodegero" Type="Self.Bodegero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tienda">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Bodegero">
+        <PropertyRef Name="idtiendas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Ventas">
+    <End Role="Ventas" Type="Self.Ventas" Multiplicity="1" />
+    <End Role="ProductosInventarios" Type="Self.ProductosInventarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ventas">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductosInventarios">
+        <PropertyRef Name="idVentas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MusicProbdModelStoreContainer">
+    <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bodegero" EntityType="Self.Bodegero" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogoProducto" EntityType="Self.CatalogoProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contador" EntityType="Self.Contador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductosInventarios" EntityType="Self.ProductosInventarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductosInventariostienda" EntityType="Self.ProductosInventariostienda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provedor" EntityType="Self.Provedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tienda" EntityType="Self.Tienda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendedor" EntityType="Self.Vendedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_Administra" Association="Self.fk_Administra">
+      <End Role="Administrador" EntitySet="Administrador" />
+      <End Role="Tienda" EntitySet="Tienda" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CatalogoProducto" Association="Self.fk_CatalogoProducto">
+      <End Role="CatalogoProducto" EntitySet="CatalogoProducto" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Cliente" Association="Self.fk_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Ventas" EntitySet="Ventas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Contador" Association="Self.fk_Contador">
+      <End Role="Contador" EntitySet="Contador" />
+      <End Role="Tienda" EntitySet="Tienda" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Factura" Association="Self.fk_Factura">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="ProductosInventarios" EntitySet="ProductosInventarios" />
+    </AssociationSet>
+    <AssociationSet Name="fk_producto" Association="Self.fk_producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="ProductosInventariostienda" EntitySet="ProductosInventariostienda" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProductoInventarios" Association="Self.fk_ProductoInventarios">
+      <End Role="ProductosInventarios" EntitySet="ProductosInventarios" />
+      <End Role="ProductosInventariostienda" EntitySet="ProductosInventariostienda" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Provedor" Association="Self.fk_Provedor">
+      <End Role="Provedor" EntitySet="Provedor" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tie" Association="Self.fk_Tie">
+      <End Role="Tienda" EntitySet="Tienda" />
+      <End Role="ProductosInventariostienda" EntitySet="ProductosInventariostienda" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tienda" Association="Self.fk_Tienda">
+      <End Role="Tienda" EntitySet="Tienda" />
+      <End Role="Vendedor" EntitySet="Vendedor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tiendas" Association="Self.fk_tiendas">
+      <End Role="Tienda" EntitySet="Tienda" />
+      <End Role="Bodegero" EntitySet="Bodegero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Ventas" Association="Self.fk_Ventas">
+      <End Role="Ventas" EntitySet="Ventas" />
+      <End Role="ProductosInventarios" EntitySet="ProductosInventarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
